@@ -1,153 +1,169 @@
 🧩 *Semester 4 bridges practical web development and analytical thinking. From MongoDB-backed apps to market basket analysis, this semester sharpens both coding and data intuition. One builds full-stack web apps, while the other explores patterns in real-world data.*
 
-# Module: Data Mining 📊
+# 🌐 Web Systems Development
 
-# Data Mining Project – Feature Selection & Classification Project 
-
-This project explores how different **feature selection techniques** affect the performance of classification models. Using real-world health-related datasets, we applied the **k-Nearest Neighbors (k-NN)** algorithm and measured how different subsets of features influence prediction accuracy.
-
-# Project Overview
-
-The goal was to:
-📈
-* Identify which features are most relevant for predicting outcomes
-* Apply statistical methods to reduce dimensionality
-* Train and test models using **k-NN** and compare performance
-
-Two main datasets were used:
-
-1. **Breast Cancer Diagnosis Dataset** 
-2. **Sleep Trouble Health Dataset** 
+**Languages & Tools:** HTML, CSS, JavaScript, Node.js, Express.js, MongoDB
 
 
-# Methods Applied
+###  Project 1: Clinic Reception System (Front-End Only) 🖥️
 
-# 1. Baseline k-NN Model (All Features)
+This project simulates a **clinic reception system**, supporting front-desk operations such as patient registration, appointment scheduling, queue management, billing, and record keeping. Developed fully using **HTML, CSS, and JavaScript**, it follows a modular structure where each core function lives in its own page.
 
-* Dataset: Breast cancer data
-* Preprocessing: Removed `Patient ID`, encoded `Diagnosis` (M = 1, B = 0), standardized features
-* Model: **k-NN with k=5**, trained on all 30 features
-* Output: Baseline accuracy
+A calendar-style dashboard serves as the main navigation hub, allowing smooth access across modules.
+
+#### Objectives:
+
+* Design a clinic system interface without backend integration
+* Practice modular front-end development
+* Simulate real-world clinic workflows with basic validation, dynamic forms, and navigation
+
+#### Features:
+
+* **Login Page**: Entry form to restrict access to staff users
+* **Dashboard**: Month-view page to view appointment dates and time
+* **Patient Registration**: Capture and display patient data in editable tables
+* **Appointment Booking**: Create and manage doctor appointments
+* **Queue System**: Add, call, and remove patients from a live waiting list
+* **Invoice Generator**: Build and edit invoices for consultations
+* **Medical Records**: Record patient health history and visit notes
+
+#### Techniques Used:
+
+* Vanilla JavaScript for DOM manipulation
+* Form validation and basic interactivity
+* Modals and tables to simulate data views
+* Responsive CSS layout across all modules
+
+#### 💡 Takeaways:
+
+* Modular front-end systems can simulate full workflows even without a backend
+* Real-world use cases enhance learning — from billing to patient queues
+* Structure and reusability matter when handling multi-page UI systems
+
+
+### Project 2: Clinic Reception System v2 (MongoDB + Express) 2️⃣ 
+
+*Just like version 1... but better, using MongoDB!*
+
+This upgraded version connects the same system to a **MongoDB database**, allowing real-time storage and retrieval of records and appointment data. It brings full-stack capability using **Node.js**, **Express.js**, and **Mongoose ORM**.
+
+#### Improvements:
+
+* **Persistent data storage** via MongoDB
+* **Real-time updates** to patient and appointment records
+* **Backend logic** with Express routing
+* **Improved file structure** and better code organization
+📌 *Purpose: Bring the system closer to real-world healthcare software with full-stack capabilities.*
+
+
+# Data Mining 📊
+
+### Data Mining Project 📈 
+
+This project explores how different **feature selection techniques** impact the performance of classification models. Using real-world health datasets, it applies the **k-Nearest Neighbors (k-NN)** algorithm to examine how reducing features can improve (or hurt) model accuracy.
+
+#### Objectives:
+
+* Identify the most predictive features in health datasets
+* Reduce dimensionality without losing accuracy
+* Compare model performance before and after selection
+
+#### Datasets Used:
+
+1. **Breast Cancer Diagnosis**
+2. **Sleep Trouble Survey**
+
+#### Techniques Applied:
+
+**1. Baseline Model**
+
+* Trained k-NN on all features (k=5)
+* Preprocessing: Label encoding, standardization
   
-*Purpose: Set a reference point for performance with all available data.*
+📌 *To establish a reference accuracy.*
 
-# 2. T-Test Feature Selection
+**2. T-Test Feature Selection**
 
-* Statistical method: Independent **t-tests** between benign and malignant samples
-* Selected top 10 features with lowest p-values
-* Compared accuracy of:
-
-  * All features
-  * Top 10 statistically significant features
-    
-  * Purpose: Use hypothesis testing to isolate features with meaningful differences.*
-
-# 3. Mutual Information Feature Selection
-
-* Calculated **mutual information scores** between each feature and the target label
-* Selected top 10 most informative features
-* Trained and evaluated:
-
-  * Full-feature k-NN model
-  * Reduced-feature k-NN model
-    
-  *Purpose: Capture non-linear relationships between features and outcomes.*
-
-# 4. Chi-Square Feature Selection (Sleep Trouble Dataset)
-
-* Preprocessing: Label-encoded categorical data
-* Applied **Chi-square tests** to find features strongly associated with sleep trouble
-* Selected top 10 features for model training
-* Evaluated accuracy using **k-NN classifier**
+* Ran t-tests between benign and malignant cases
+* Selected top 10 lowest p-value features
   
-*Purpose: Apply categorical feature selection to a different health dataset.*
+📌 *To isolate statistically different variables.*
+
+**3. Mutual Information**
+
+* Ranked features by information gain
+* Focused on non-linear dependencies
+  
+📌 *To measure relevance beyond linear correlation.*
+
+**4. Chi-Square (Sleep Dataset)**
+
+* Applied chi-square test to categorical data
+* Selected top features influencing sleep trouble
+  
+📌 *To apply categorical feature selection.*
+
+#### 🔧 Summary of Tools:
+
+* **Classifier**: k-NN
+* **Feature Selectors**: T-Test, Mutual Info, Chi-Square
+* **Libraries**: Pandas, Sklearn, Seaborn
+
+#### 💡 Key Insights:
+
+* Feature selection reduces overfitting and improves interpretability
+* Different methods reveal different feature types — linear, categorical, or non-linear
+* k-NN is sensitive to irrelevant features; selecting the right ones makes a big difference
 
 
-# Techniques Summary
+### 🧪 Practical Report
 
-* **Classification Algorithm**: k-Nearest Neighbors (k-NN)
-* **Preprocessing**: StandardScaler, Label Encoding
-* **Feature Selection Methods**:
-  * Independent T-Test
-  * Mutual Information
-  * Chi-Square Test
+This report focuses on predicting survival in patients with cirrhosis by applying **data cleaning**, **statistical analysis**, and **machine learning-based feature selection**.
 
-# 💡 Key Outcomes
+#### Dataset: CIRRHOSIS.xlsx
 
-* Feature selection can **improve model performance** while reducing complexity
-* Different methods highlight **different types of relationships** (linear, categorical, non-linear)
-* Statistical reasoning supports better data-driven decisions
+Clinical data with missing values and outcome labels (Alive/Deceased).
 
-# 2. Data-Mining Practical Report 🧪
+#### Workflow Breakdown:
 
-This project focused on identifying **key predictors of survival in cirrhosis patients** through a combination of **data imputation, visualization**, and **feature selection using machine learning and statistics**.
+**Phase 1: Missing Data Analysis**
+*Files: Graph Analysis of Missing Values.py, all data imputed.py*
 
-The dataset contained missing values and clinical data for liver patients, with the target outcome being patient survival (alive or deceased). The analysis was broken down into several key phases:
+* Visualized missingness using Seaborn
+* Used **mean/median imputation** depending on distribution
+  
+📌 *To retain dataset integrity without heavy bias.*
 
-# Dataset Used: `CIRRHOSIS.xlsx`
+**Phase 2: Feature Exploration**
+*File: Question 6.py*
 
-* Medical dataset with lab results, diagnosis stages, and survival labels
-* Required handling of missing values and variable distributions
-* Objective: Find the most significant features that influence patient survival
+* Focused on Albumin, Prothrombin, ALP, and Bilirubin
+* Visualized group distributions by stage
+* Used correlation heatmaps and scatter plots
+  
+📌 *To understand patterns and class separation visually.*
 
-# Phase 1: Missing Data Visualization & Imputation
+**Phase 3: Feature Elimination & Prediction**
+*File: Question 7.py*
 
-**Files:**
-
-* Graph Analysis of Missing Values.py
-
-* all data imputed.py
-
-* Used **Seaborn** and **Matplotlib** to visualize missing patterns across lab results (e.g., *Cholesterol*, *Copper*, *Triglycerides*, *Platelets*)
-
-* Performed:
-
-  * **Median imputation** for right-skewed variables
-  * **Mean imputation** for normally distributed variables
-
-* Saved final cleaned dataset as `all_data_imputed.xlsx`
-*Purpose: Clean the dataset without skewing distributions too heavily*
+* Used **t-tests** for significance
+* Applied **Backward Elimination** with Random Forest
+* Used **Leave-One-Out Cross Validation (LOOCV)**
+  
+📌 *To identify the smallest, most effective set of predictors.*
 
 
-# Phase 2: Feature Correlation & Class Separation
+#### Techniques Summary:
 
-**File:**: Question 6.py
-
-* Focused on 4 clinical lab features: *Albumin*, *Prothrombin*, *Alkaline Phosphatase*, *Bilirubin*
-* Visualized distributions using:
-
-  * **Histograms and Boxplots** by histological stage
-  * **Scatter plots** to check class separation
-  * **Correlation heatmaps** to understand interrelationships
-  *Purpose: Understand how different stages relate to lab readings, and identify possible predictors visually*
+* **Imputation**: Median for skewed, mean for normal
+* **Visualization**: Seaborn, Matplotlib
+* **Model**: Random Forest + LOOCV
+* **Selection**: T-Test, backward removal
 
 
-# Phase 3: Survival Prediction & Feature Elimination
+### 💡 Takeaways:
 
-**File:**: Question 7.py
-
-* Loaded a preprocessed dataset (`cirrhosis_cleaned_for_feat_select.xlsx`)
-* Used **t-tests** to rank features by significance
-* Performed **Backward Feature Elimination** using:
-
-  * **Random Forest Classifier**
-  * **Leave-One-Out Cross Validation (LOOCV)**
-    
-* Iteratively removed features with the highest p-values
-* Tracked how model accuracy changed as fewer features were used
-*Purpose: Pinpoint the smallest set of features with the highest predictive power*
-
-# Techniques Used
-
-* **Data Imputation**: Median/Mean strategies
-* **Visualization Tools**: Seaborn, Matplotlib
-* **Statistical Tests**: T-Test
-* **Modeling**: Random Forest, LOOCV
-* **Feature Selection**: Backward elimination based on significance and accuracy
-
-# 💡 Key Takeaways
-
-* Missing data doesn’t always require deletion — thoughtful imputation maintains data integrity
-* Visuals help explain complex medical data to both technical and non-technical audiences
-* Machine learning and statistics can work together to find **minimal yet powerful predictors**
-
+* Missing data doesn’t always require deletion — thoughtful imputation preserves value
+* Statistical tests + visual analysis = stronger feature understanding
+* Small, well-chosen feature sets often outperform large noisy ones
+* ML and statistics can work together to support healthcare decision-making
