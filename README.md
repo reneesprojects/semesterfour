@@ -53,6 +53,7 @@ This upgraded version connects the same system to a **MongoDB database**, allowi
 * **Real-time updates** to patient and appointment records
 * **Backend logic** with Express routing
 * **Improved file structure** and better code organization
+
 📌 *Purpose: Bring the system closer to real-world healthcare software with full-stack capabilities.*
 
 
