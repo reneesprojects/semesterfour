@@ -34,7 +34,7 @@ A calendar-style dashboard serves as the main navigation hub, allowing smooth ac
 * Modals and tables to simulate data views
 * Responsive CSS layout across all modules
 
-#### 💡 Takeaways:
+### 💡 Takeaways:
 
 * Modular front-end systems can simulate full workflows even without a backend
 * Real-world use cases enhance learning — from billing to patient queues
